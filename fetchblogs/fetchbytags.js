@@ -10,7 +10,7 @@ const fetchbytags=app.get('/fetchbytags/:tag',(req,res)=>{
             const result=await Blogs.find({tags:{$elemMatch:{$eq:tag}}});
             res.json(result)
         } catch (error) {
-            
+            console.log("this is the error "+error)
         }
     }
     fetchbytags();
