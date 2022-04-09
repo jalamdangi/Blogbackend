@@ -11,7 +11,8 @@ const getUser=require('./fetch user/fetchuser');
 const createBlogs=require('./routes/CreateBlogs');
 var fetchbytags=require('./fetchblogs/fetchbytags');
 var allblogs=require('./fetchblogs/fetchallblogs');
-var fetchblogsbyid=require('./fetchblogs/fetchblogsbyid')
+var fetchblogsbyid=require('./fetchblogs/fetchblogsbyid');
+var fetchBlogsByCategory=require('./fetchblogs/fetchBlogsbycategory')
 var reports=require('./routes/reports');
 var question=require('./routes/Questions');
 var fetchQuestion=require('./fetchquestion/fetchquestion');
@@ -38,6 +39,7 @@ app.use(login);
 app.use(fetchbytags);
 app.use(allblogs)
 app.use(fetchblogsbyid);
+app.use(fetchBlogsByCategory);
 app.use(tag);
 app.use(authenticate);
 app.use(comments)

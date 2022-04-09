@@ -18,13 +18,19 @@ body('password','password must not be blank').exists()
                     const error=validationResult(req);
                     if(!error.isEmpty)return res.status(400).json({ errors: errors.array() });
                     const result=await Users.findOne({email:username});
-                    if(!result){res.sendStatus(401).res.json({message:"email does not found"})}
-                    const compare= await bycrypt.compare(password,result.password);
-                    if(!compare){res.json({message:"login with correct credital"})}
-                    const token=jwt.sign({id:result._id,username:result.email},'thesecretishere');
-                    res.json({message:"login succesful",token:token});
+                    if(!result){res.sendStatus(404).res.json({message:"email does not found"})}
+                    else{
+
+                            const compare= await bycrypt.compare(password,result.password);
+                            if(!compare){res.json({message:"login with correct credential"})}
+                            else{
+                                      
+                                    const token=jwt.sign({id:result._id,username:result.email},'thesecretishere');
+                                    res.json({message:"login succesful",token:token});
+                            }
+                    }
             } catch (error) {
-                    res.sendStatus(400).json(error);
+                    console.log("this is the error "+error)
             }
        
     }
