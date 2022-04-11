@@ -11,7 +11,7 @@ const allblogs=app.get('/allblogs',(req,res)=>{
             if(!result){res.json({message:"No Post Yet"})}
             res.json(result);
         } catch (error) {
-            res.sendStatus(400).json({message:"Something went wrong"});
+            console.log("this is the error "+error)
         }
     }
     fetchbytags();

@@ -15,7 +15,8 @@ const createBlogs=app.post('/postblog',authenticate,(req,res)=>{
         const b1= new Blog({user_id:user,
             title:title,
             description:description,
-            tags:tags,category:category,
+            tags:tags,
+            category:category,
             image:image});
         const result = await b1.save();
         res.json(result);}

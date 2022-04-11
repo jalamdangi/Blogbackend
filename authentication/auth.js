@@ -13,7 +13,7 @@ const authenticate=(req,res,next)=>{
              req.user=isValid.id;
             next();
         } catch (error) {
-            res.json(error)
+            console.log(error)
         }
     }
 

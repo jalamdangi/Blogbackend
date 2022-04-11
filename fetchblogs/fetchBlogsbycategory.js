@@ -9,7 +9,7 @@ const fetchBlogsByCategory=app.get('/fetchbycategory/:category',(req,res)=>{
             const result= await Blogs.find({category:category});
             res.json(result);
         } catch (error) {
-            res.sendStatus(404);
+            console.log("this is the error "+error)
         }
     }
     fetchBlogs()

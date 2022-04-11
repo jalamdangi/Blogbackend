@@ -10,7 +10,7 @@ const fetchblogsbyid=app.get('/getblogs/:id',(req,res)=>{
         const result= await Blogs.find({_id:id});
         res.json(result);
         } catch (error) {
-            res.json(error);
+            console.log("this is the error "+error)
         }
     }
     getblogs();

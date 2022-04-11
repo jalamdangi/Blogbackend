@@ -8,8 +8,9 @@ const question=app.post('/question',authenticate,(req,res)=>{
         try {
             const user=req.user;
             const question=req.body.question;
+            const tags=req.body.tags;
             if(!user){res.sendStatus(401)}
-            var q1=new questions({user_id:user, question:question});
+            var q1=new questions({user_id:user, question:question,tags:tags});
             const result= await q1.save();
             res.json(result);
         } catch (error) {

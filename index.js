@@ -10,6 +10,7 @@ const authenticate=require('./authentication/auth')
 const getUser=require('./fetch user/fetchuser');
 const createBlogs=require('./routes/CreateBlogs');
 var fetchbytags=require('./fetchblogs/fetchbytags');
+var fetchtag=require('./fetchtag/fetchtag')
 var allblogs=require('./fetchblogs/fetchallblogs');
 var fetchUserBlog=require('./fetchblogs/fetchuserapi');
 var fetchblogsbyid=require('./fetchblogs/fetchblogsbyid');
@@ -23,6 +24,7 @@ var fetchQuestionbyid=require('./fetchquestion/fetchquestionbyid');
 var comments=require('./routes/comments');
 var fetchcomments=require('./fetchcomments/fetchcommet');
 var postanswer=require('./routes/answers');
+var fetchquestionbytag=require('./fetchquestion/fetchquestionbytag');
 var tag=require('./routes/tags')
 var cors=require('cors');
 app.use(cors());
@@ -30,10 +32,12 @@ app.use(cors());
 //using all apis in my main file
 app.use(fetchreportquestion);
 app.use(fetchcomments);
+app.use(fetchtag)
 app.use(fetchreport);
 app.use(reports);
 app.use(question);
 app.use(fetchQuestion);
+app.use(fetchquestionbytag)
 app.use(fetchQuestionbyid);
 app.use(User);
 app.use(login);
