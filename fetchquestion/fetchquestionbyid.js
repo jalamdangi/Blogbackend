@@ -10,7 +10,7 @@ var question=require('../models/Questions');
              if(!result){res.sendStatus(404)}
              res.json(result);
          } catch (error) {
-             res.json(error)
+            console.log(error)
          }
      }
      fetch();

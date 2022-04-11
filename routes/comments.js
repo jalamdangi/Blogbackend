@@ -14,7 +14,7 @@ const comments=app.post('/comment/:blogid',authenticate,(req,res)=>{
             if(!result){res.json({mesaage:"some error occured"})}
             res.json(result);
         } catch (error) {
-            res.json(error)
+            console.log(error)
         }
 
     }
