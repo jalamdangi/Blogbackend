@@ -21,7 +21,7 @@ const createBlogs=app.post('/postblog',authenticate,(req,res)=>{
         const result = await b1.save();
         res.json(result);}
         catch(err){
-            console.log("this is the error "+error)
+            console.log("this is the error "+ error)
         }
     }
     postblog();

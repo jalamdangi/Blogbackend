@@ -11,6 +11,7 @@ const updateBlog=app.put('/updateblog/:id',authenticate,(req,res)=>{
             title:req.body.title,
             description:req.body.description,
             tags:req.body.tags,
+            image:req.body.image,
             category:req.body.category
         }
         const result= await Blog.findByIdAndUpdate(req.params.id,{$set:updatedBlog});

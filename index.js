@@ -22,8 +22,10 @@ var fetchreport=require('./fetchreport/fetchreport');
 var fetchreportquestion=require('./fetchreport/fetchreportquestion');
 var fetchQuestionbyid=require('./fetchquestion/fetchquestionbyid');
 var comments=require('./routes/comments');
+var updateBlog=require('./update/updateBlog')
 var fetchcomments=require('./fetchcomments/fetchcommet');
 var postanswer=require('./routes/answers');
+var fetchanswer=require('./fetchanswer/fetchanswer')
 var fetchquestionbytag=require('./fetchquestion/fetchquestionbytag');
 var tag=require('./routes/tags')
 var cors=require('cors');
@@ -32,6 +34,7 @@ app.use(cors());
 //using all apis in my main file
 app.use(fetchreportquestion);
 app.use(fetchcomments);
+app.use(fetchanswer)
 app.use(fetchtag)
 app.use(fetchreport);
 app.use(reports);
@@ -39,6 +42,7 @@ app.use(question);
 app.use(fetchQuestion);
 app.use(fetchquestionbytag)
 app.use(fetchQuestionbyid);
+app.use(updateBlog)
 app.use(User);
 app.use(login);
 app.use(fetchbytags);
